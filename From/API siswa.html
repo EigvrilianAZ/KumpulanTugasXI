@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"> </script>
+    <style>
+        table, th, td {
+            border: 1px solid rgb(7, 0, 33);
+            border-collapse: collapse;
+            padding: 6px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Daftar siswa</h1>
+    <tabel id="siswa-rpl">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Panggilaan</th>
+                <th>Kelas</th>
+                <th>JK</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </tabel>
+
+    <script>
+
+        $.getJSON('https://api.rplcoders.com/siswa.php', function (data) {
+
+            $('#siswa-rpl tbody').html(
+                $.map(data.siswa, siswa =>
+                    `<tr>
+                        <td>${siswa.id}</td>
+                        <td>${siswa.name}</td>
+                        <td>${siswa.panggilan}</td>
+                        <td>${siswa.kelas}</td>
+                        <td>${siswa.jk}</td>
+                    </tr>`
+                ).join('')
+            );
+        });
+    </script>
+</body>
+
+</html>

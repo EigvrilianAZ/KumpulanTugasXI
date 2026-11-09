@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            max-width: 300px;
+            margin: 30px auto;
+            padding: 24px;
+            background: rgb(16, 2, 66);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgb(149, 131, 254);
+        }
+
+        h1 {
+            color: azure;
+        }
+
+        input,
+        select,
+        textarea {
+            background: rgb(7, 0, 33);
+            ;
+            border: azure;
+            color: azure;
+        }
+
+        button {
+            background: rgb(7, 0, 33);
+            ;
+            color: azure;
+            border: azure;
+        }
+
+        label {
+            color: azure;
+        }
+    </style>
+
+
+</head>
+
+<body style="background-color: rgb(7, 0, 33);">
+
+    <main>
+        <h1 style="text-align: center;">Pendaftaran Karyawan Baru</h1>
+        <form action="http://rplcoders.com/proses.php" method="post">
+        <fieldset style="color: azure;">
+            <legend style="color: azure;">Data Diri</legend>
+
+
+            <label for="username">Nama Lengkap :</label> <br>
+            <input type="text" id="username" name="username" placeholder="Masukkan Nama Lengkap" pattern="[a-zA-Z\s]+"
+                required autofocus>
+            <br>
+
+            <label for="name">Nama Panggilan :</label> <br>
+            <input type="text" id="name" name="name" placeholder="Masukkan Nama Panggilan" pattern="^[a-zA-Z\s]+$"
+                required> <br>
+
+            <label for="nomerwa">Nomer WA :</label> <br>
+            <input type="tel" id="nomerwa" name="nomerwa" placeholder="62+" pattern="^[0-9]{10,13}$" required> <br>
+
+            <label for="tanggal">Tanggal Lahir :</label> <br>
+            <input type="date" id="tanggal" name="tanggal" required> <br>
+
+
+
+            <label for="alamat">Alamat Tempat Tinggal :</label> <br>
+            <textarea id="alamat" name="alamat" cols="30" rows="3" placeholder="Masukkan Alamat" required></textarea>
+            <br>
+
+            <label>Jenis Kelamin </label> <br>
+            <input type="radio" id="laki-laki" name="gender" value="laki-laki">
+
+            <label for="laki-laki">Laki-laki </label>
+            <input type="radio" id="perempuan" name="gender" value="perempuan">
+            <label for="perempuan">Perempuan </label> <br>
+
+            <label for="file">File Hasil Tes Kesehatan:</label>
+            <input type="file" id="file" name="file" required><br>
+
+
+        </fieldset> <br>
+        <fieldset style="color: azure;">
+            <legend style="color: azure;">Data Perkerjaan</legend>
+
+
+            <label>Job Yang Akan Diambil :</label> <br>
+            <label for="job">
+                <input type="checkbox" id="job" name="Job" value="front-end"> Front-End Developer
+            </label> <br>
+            <label for="job2">
+                <input type="checkbox" id="job2" name="job2" value="back-end"> Back-End Developer
+            </label> <br>
+            <label for="job3">
+                <input type="checkbox" id="job3" name="job3" value="full-stack"> Full-Stack Developer
+            </label> <br>
+
+            <label for="jamkerja">Jam Kerja :</label> <br>
+            <select name="jamkerja" id="jamkerja">
+                <option value="06:00-12:00">06:00-12:00</option>
+                <option value="12:00-18:00">12:00-18:00</option>
+                <option value="18:00-21:30">18:00-21:30</option>
+            </select> <br>
+
+            <label>Nomer Ruangan :</label>
+            <input list="Ruangan">
+            <datalist id="Ruangan">
+                <option value="Ruangan F1">
+                <option value="Ruangan F2">
+                <option value="Ruangan B1">
+                <option value="Ruangan B2">
+                <option value="Ruangan S1">
+                <option value="Ruangan S2">
+            </datalist> <br>
+
+            <label for="nomerruangan">Lantai :</label> <br>
+            <input type="number" id="nomerruangan" name="nomerruangan" min="1" max="6" step="1" placeholder="Lantai"
+                required>
+            <br>
+
+            <label for="password">Password :</label> <br>
+            <input type="password" id="password" name="password" placeholder="Masukkan Password" required> <br> <br>
+
+            <button type="submit">Lampirkan</button>
+            <button type="reset" onclick="return confirm('Apakah anda ingin mengkosonkan Formulir ?')">Riset
+                Formulir</button>
+
+
+        </fieldset>
+        </form>
+    </main>
+
+</body>
+
+</html>
